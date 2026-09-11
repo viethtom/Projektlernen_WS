@@ -8,6 +8,28 @@
 </head>
 <body>
 
+<div id="gate-overlay">
+  <div class="gate-box">
+    <h2>🔒 Geschützter Bereich</h2>
+    <p>Diese Seite ist nur für Workshop-Teilnehmende bestimmt. Bitte Passwort eingeben:</p>
+    <form id="gate-form">
+      <input type="password" id="gate-input" autocomplete="off" placeholder="Passwort" required>
+      <button type="submit">Zugang</button>
+      <p id="gate-error" hidden>Falsches Passwort — bitte erneut versuchen.</p>
+    </form>
+  </div>
+</div>
+<script>
+  (function () {
+    try {
+      if (sessionStorage.getItem("ws_eduscrum_auth") === "1") {
+        var o = document.getElementById("gate-overlay");
+        if (o) o.remove();
+      }
+    } catch (e) {}
+  })();
+</script>
+
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow">Pädagogischer Tag · Workshop</p>
@@ -182,9 +204,10 @@
   </section>
 
   <footer class="page-footer">
-    Workshop „Projektorientiertes Lernen mit eduScrum" · Pädagogischer Tag · <a href="materialien.html">Zusatzmaterialien</a>
+    Workshop „Projektorientiertes Lernen mit eduScrum" · Pädagogischer Tag · <a href="materialien.html">Zusatzmaterialien</a> · <a href="impressum.html">Impressum &amp; Datenschutz</a>
   </footer>
 
 </div>
+<script src="assets/gate.js"></script>
 </body>
 </html>

@@ -302,3 +302,62 @@ footer.page-footer {
   text-align: center;
 }
 footer.page-footer a { color: var(--blue); }
+
+/* Password gate */
+#gate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#gate-overlay .gate-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 28px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+}
+#gate-overlay h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: var(--dark);
+  border: none;
+  padding: 0;
+}
+#gate-overlay p {
+  font-size: 14px;
+  color: var(--gray);
+  margin: 0 0 18px;
+}
+#gate-overlay input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+#gate-overlay button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: var(--blue);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14.5px;
+  cursor: pointer;
+}
+#gate-overlay button:hover { background: #2559c7; }
+#gate-overlay #gate-error {
+  color: var(--orange);
+  font-size: 13px;
+  margin: 10px 0 0;
+}
